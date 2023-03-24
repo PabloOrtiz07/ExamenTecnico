@@ -8,6 +8,7 @@ DROP TABLE Productos
 IF OBJECT_ID('Item_de_la_orden_de_compra','U')IS NOT NULL
 DROP TABLE Item_de_la_orden_de_compra
 
+IF EXISTS (SELECT * FROM sys.objects WHERE name = 'tablaDicsys')
 DROP PROCEDURE tablaDicsys
 
 
