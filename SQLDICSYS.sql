@@ -197,7 +197,7 @@ UPDATE Producto
 set precio_venta = precio_venta*3 where cod_producto in
  (select i.cod_producto  
  from Item_de_la_orden_de_compra i join Orden_De_Compra o on i.cod_orden=o.cod_orden 
- where (day(fecha_entrega)-day(fecha_emision_orden)) <4) 
+ WHERE DATEDIFF(day, o.fecha_emision_orden, o.fecha_entrega)  <4) 
 
 /*
 4) Insertar en una tabla (supuestamente ya creada), los registros provenientes de una
